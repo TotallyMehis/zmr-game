@@ -1,35 +1,38 @@
-name: C/C++ CI
+name: make_game_linux
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - dev
+      - hotfix*
+    paths:
+      include:
+      - mp/src/*
+      - forcebuild.txt
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
+    # NOTE: Each step sets cwd back to git folder.
     steps:
     - uses: actions/checkout@v2
-    - name: echostuff
-      run: echo $PWD
-    - name: install_libs
+    - name: Install Dependencies
       run: |
         sudo apt update
         sudo apt install build-essential gcc-multilib g++-multilib
-    - name: download_runtime
+    - name: Download Steam Runtime
       run: |
         sudo mkdir /valve
         sudo wget http://media.steampowered.com/client/runtime/steam-runtime-sdk_latest.tar.xz
         sudo tar xvf steam-runtime-sdk_latest.tar.xz
         sudo mv steam-runtime-sdk_2013-09-05 /valve/steam-runtime
-    - name: install_runtime
-      run: cat steam-runtime-install.txt | sudo /valve/steam-runtime/setup.sh
-    - name: create_make_file
+    - name: Install Runtime
+      run: cat build/steam-runtime-install.txt | sudo /valve/steam-runtime/setup.sh
+    - name: Create make file
       run: |
         cd mp/src
         ./creategameprojects
-    - name: make
-      run: cat make-script.txt | sudo /valve/steam-runtime/shell-i386.sh
+    - name: Make
+      run: cat build/make-script.txt | sudo /valve/steam-runtime/shell-i386.sh
