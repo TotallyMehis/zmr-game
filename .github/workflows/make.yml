@@ -34,4 +34,4 @@ jobs:
         cd mp/src
         ./creategameprojects
     - name: Make
-      run: cat build/make-script.txt | sudo /valve/steam-runtime/shell-i386.sh
+      run: cat build/make-game-script.txt | sudo /valve/steam-runtime/shell-i386.sh
