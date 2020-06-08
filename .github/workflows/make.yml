@@ -3,9 +3,9 @@ name: make_game_linux
 on:
   push:
     branches:
-      - master
-      - dev
-      - hotfix*
+    - master
+    - dev
+    - hotfix*
     paths:
       include:
       - mp/src/*
