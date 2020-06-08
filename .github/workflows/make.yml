@@ -32,4 +32,6 @@ jobs:
         cd mp/src
         ./creategameprojects
     - name: make
-      run: make -f zmr-games.mak | sudo /valve/steam-runtime/shell-i386.sh
+      run: |
+        cd mp/src
+        make -f zmr-games.mak | sudo /valve/steam-runtime/shell-i386.sh
