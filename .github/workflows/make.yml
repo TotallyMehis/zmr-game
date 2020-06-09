@@ -35,3 +35,6 @@ jobs:
         ./creategameprojects
     - name: Make
       run: cat build/make-game-script.txt | sudo /valve/steam-runtime/shell-i386.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        path: mp/game/zombie_master_reborn/bin/*
