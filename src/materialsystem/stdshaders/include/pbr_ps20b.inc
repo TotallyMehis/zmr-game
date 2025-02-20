@@ -91,7 +91,7 @@ public:
 #endif	// _DEBUG
 	}
 
-	pbr_ps20b_Static_Index( IShaderShadow* pShaderShadow, IMaterialVar** params )
+	pbr_ps20b_Static_Index( )
 	{
 		m_nFLASHLIGHT = 0;
 		m_nFLASHLIGHTDEPTHFILTERMODE = 0;
@@ -177,7 +177,7 @@ public:
 #endif	// _DEBUG
 	}
 
-	pbr_ps20b_Dynamic_Index( IShaderDynamicAPI* pShaderAPI )
+	pbr_ps20b_Dynamic_Index( )
 	{
 		m_nWRITEWATERFOGTODESTALPHA = 0;
 		m_nPIXELFOGTYPE = 0;

@@ -17,7 +17,7 @@
 class zmr_test_ps20b_Static_Index
 {
 public:
-	zmr_test_ps20b_Static_Index( IShaderShadow* pShaderShadow, IMaterialVar** params )
+	zmr_test_ps20b_Static_Index( )
 	{
 	}
 
@@ -33,7 +33,7 @@ public:
 class zmr_test_ps20b_Dynamic_Index
 {
 public:
-	zmr_test_ps20b_Dynamic_Index( IShaderDynamicAPI* pShaderAPI )
+	zmr_test_ps20b_Dynamic_Index( )
 	{
 	}
 

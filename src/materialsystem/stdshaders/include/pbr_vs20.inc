@@ -11,7 +11,7 @@
 class pbr_vs20_Static_Index
 {
 public:
-	pbr_vs20_Static_Index( IShaderShadow* pShaderShadow, IMaterialVar** params )
+	pbr_vs20_Static_Index( )
 	{
 	}
 
@@ -84,7 +84,7 @@ public:
 #endif	// _DEBUG
 	}
 
-	pbr_vs20_Dynamic_Index( IShaderDynamicAPI* pShaderAPI )
+	pbr_vs20_Dynamic_Index( )
 	{
 		m_nCOMPRESSED_VERTS = 0;
 		m_nDOWATERFOG = 0;
